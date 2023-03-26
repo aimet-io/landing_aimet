@@ -19,6 +19,7 @@ export default function MainLayout({ title, children, metaDescription }) {
 
       {children}
 
+
       <Footer />
     </>
   );
