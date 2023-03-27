@@ -3,7 +3,7 @@ import React from "react";
 export default function Pagination({ totalPage, setPage, page }) {
   return (
     totalPage && (
-      <ul className="justify-center gap-x-3 flex flex-wrap">
+      <ul className="justify-center gap-3 flex flex-wrap">
         {Array.from({ length: totalPage }, (_, i) => i + 1).map(
           (item, index) => (
             <li
