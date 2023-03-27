@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 import useSWR from "swr";
 import Link from "next/link";
+import Pagination from "../@pagination/Pagination";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-const fetcher = (...args) =>
-  fetch(...args)
-    .then((res) => res.json())
-    .then((res) => res.data);
 export default function Portfolio() {
-  const { data: projects } = useSWR(
-    `${API_URL}/projects?sort=updatedAt:desc&populate=*&pagination[pageSize]=12&pagination[page]=1`,
-    fetcher
-  );
+  const [page, setPage] = React.useState(1);
+
+  const [projects, setProjects] = React.useState(null);
+
+  useEffect(() => {
+    fetch(
+      `${API_URL}/projects?sort=updatedAt:desc&populate=*&pagination[pageSize]=12&pagination[page]=${page}`
+    )
+      .then((res) => res.json())
+
+      .then(setProjects);
+  }, [page]);
 
   return (
     <section id="portafolio" className="container pt-[70px]">
@@ -27,7 +32,12 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {projects && (
+        <Pagination
+          totalPage={projects?.meta?.pagination.pageCount}
+          setPage={setPage}
+          page={page}
+        />
+        {projects?.data && (
           <motion.div
             className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12"
             initial="initial"
@@ -42,9 +52,9 @@ export default function Portfolio() {
               },
             }}
           >
-            {projects.map((project) => (
+            {projects?.data.map((project, index) => (
               <motion.div
-                key={project.id}
+                key={index}
                 className="group/item overflow-hidden  relative rounded-xl before:content-[''] before:absolute before:h-full before:bottom-0 before:left-0 before:w-full before:transition-opacity hover:before:opacity-100 before:bg-dark/70 before:opacity-0  before:duration-300"
                 variants={{
                   initial: { opacity: 0, y: "50%" },
@@ -54,14 +64,14 @@ export default function Portfolio() {
               >
                 <img
                   className="w-full object-cover"
-                  src={project.attributes.image.data.attributes.url}
+                  src={project?.attributes.image.data.attributes.url}
                   alt="Project"
                 />
 
                 <Link
                   className="text-[18px] px-6 py-2 border rounded-md transition-opacity duration-300  absolute opacity-0 group-hover/item:opacity-100 group-hover/item:visible invisible left-1/2 top-1/2  -translate-y-1/2  -translate-x-1/2 text-white"
                   target="_blank"
-                  href={project.attributes.preview}
+                  href={project?.attributes.preview ?? "#"}
                 >
                   Abrir Demo
                 </Link>
