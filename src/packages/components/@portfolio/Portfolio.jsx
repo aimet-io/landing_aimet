@@ -47,7 +47,7 @@ export default function Portfolio() {
             >
               <img
                 className="w-full object-cover"
-                src={project?.attributes.image.data.attributes.url}
+                src={`${project?.attributes.image.data.attributes.url}-w460`}
                 alt="Project"
               />
 
