@@ -46,7 +46,7 @@ export default function Portfolio() {
               className="group/item overflow-hidden  relative rounded-xl before:content-[''] before:absolute before:h-full before:bottom-0 before:left-0 before:w-full before:transition-opacity hover:before:opacity-100 before:bg-dark/70 before:opacity-0  before:duration-300"
             >
               <img
-                className="w-full object-cover"
+                className="h-full object-cover"
                 src={`${project?.attributes.image.data.attributes.url}-w460`}
                 alt="Project"
               />
