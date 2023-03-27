@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 
 import useSWR from "swr";
 import Link from "next/link";
@@ -7,19 +6,25 @@ import Pagination from "../@pagination/Pagination";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 export default function Portfolio() {
   const [page, setPage] = React.useState(1);
+  const [totalPage, setTotalPage] = React.useState(null);
+  const { data: projects } = useSWR(
+    `${API_URL}/projects?sort=updatedAt:desc&populate=*&pagination[pageSize]=9&pagination[page]=${page}`,
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateIfStale: false,
+      onSuccess: (data) => {
+        const currentPage = data.meta.pagination.page;
 
-  const [projects, setProjects] = React.useState(null);
-
-  useEffect(() => {
-    fetch(
-      `${API_URL}/projects?sort=updatedAt:desc&populate=*&pagination[pageSize]=12&pagination[page]=${page}`
-    )
-      .then((res) => res.json())
-
-      .then(setProjects);
-  }, [page]);
+        if (currentPage == 1)
+          return setTotalPage(data.meta.pagination.pageCount);
+      },
+    }
+  );
 
   return (
     <section id="portafolio" className="container pt-[70px]">
@@ -32,22 +37,18 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <Pagination
-          totalPage={projects?.meta?.pagination.pageCount}
-          setPage={setPage}
-          page={page}
-        />
+        <Pagination totalPage={totalPage} setPage={setPage} page={page} />
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
-          {projects?.data.map((project, index) => (
+          {projects?.data.map((project) => (
             <div
-              key={index}
+              key={project.id}
               className="group/item overflow-hidden  relative rounded-xl before:content-[''] before:absolute before:h-full before:bottom-0 before:left-0 before:w-full before:transition-opacity hover:before:opacity-100 before:bg-dark/70 before:opacity-0  before:duration-300"
             >
               <img
                 referrerPolicy="no-referrer"
-                className="w-full object-cover"
-                src={project?.attributes.image.data.attributes.url}
+                className="h-full object-cover"
+                src={`${project?.attributes.image.data.attributes.url}-w460`}
                 alt="Project"
               />
 

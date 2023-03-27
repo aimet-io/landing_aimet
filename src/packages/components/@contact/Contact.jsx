@@ -19,9 +19,6 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    
-
-
     toast
       .promise(
         axios.post(API_EMAIL, data),
@@ -49,7 +46,9 @@ export default function Contact() {
               contacto conmigo. O si lo prefiere, puede enviarme un correo
               electrónico a &nbsp;
             </span>
-            <span className="font-semibold hover:select-all">josephvtxx@gmail.com</span>
+            <span className="font-semibold hover:select-all">
+              josephvtxx@gmail.com
+            </span>
           </p>
         </div>
 
@@ -80,23 +79,29 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="center-flex h-[88px] w-[88px] border rounded-full  text-2xl">
+              <a
+                href="mailto: official.aimet@gmail.com"
+                className="center-flex h-[88px] w-[88px] border rounded-full  text-2xl"
+              >
                 <MdEmail />
-              </div>
+              </a>
 
               <div className="text-white">
                 <h5 className="md:text-[30px] text-[25px]">Email</h5>
-                <p className="hover:select-all">josephvtxx@gmail.com</p>
+                <p className="hover:select-all">official.aimet@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="center-flex h-[88px] w-[88px] border rounded-full  text-2xl">
+              <a
+                href="tel: +51 904 492 115"
+                className="center-flex h-[88px] w-[88px] border rounded-full  text-2xl"
+              >
                 <FaPhoneAlt />
-              </div>
+              </a>
 
               <div className="text-white">
                 <h5 className="md:text-[30px] text-[25px]">Teléfono</h5>
-                <p>Coming Soong</p>
+                <p>+51 904 492 115</p>
               </div>
             </div>
           </motion.section>
@@ -121,10 +126,12 @@ export default function Contact() {
               action=""
             >
               <input
-                {...register("name", {required: true})}
+                {...register("name", { required: true })}
                 placeholder="Nombre"
                 type="text"
-                className={`py-4 px-3 rounded-lg bg-transparent border outline-none ${errors.name ? ' outline-red-400 -outline-offset-2' : ''}`}
+                className={`py-4 px-3 rounded-lg bg-transparent border outline-none ${
+                  errors.name ? " outline-red-400 -outline-offset-2" : ""
+                }`}
               />
               <input
                 {...register("email")}
@@ -152,7 +159,9 @@ export default function Contact() {
                 maxLength={800}
                 rows="7"
                 type="text"
-                className={`py-4 px-3 rounded-lg bg-transparent outline-none lg:col-span-2 border ${errors.message ? ' outline-red-400 -outline-offset-2' : ''}`}
+                className={`py-4 px-3 rounded-lg bg-transparent outline-none lg:col-span-2 border ${
+                  errors.message ? " outline-red-400 -outline-offset-2" : ""
+                }`}
               />
 
               <div>
