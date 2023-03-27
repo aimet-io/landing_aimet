@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import useSWR from "swr";
 import Link from "next/link";
@@ -10,16 +10,21 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Portfolio() {
   const [page, setPage] = React.useState(1);
-
+  const [totalPage, setTotalPage] = React.useState(null);
   const { data: projects } = useSWR(
-    `${API_URL}/projects?sort=updatedAt:desc&populate=*&pagination[pageSize]=12&pagination[page]=${page}`,
-    fetcher, {
-
+    `${API_URL}/projects?sort=updatedAt:desc&populate=*&pagination[pageSize]=9&pagination[page]=${page}`,
+    fetcher,
+    {
       revalidateOnFocus: false,
       revalidateIfStale: false,
+      onSuccess: (data) => {
+        const currentPage = data.meta.pagination.page;
+
+        if (currentPage == 1)
+          return setTotalPage(data.meta.pagination.pageCount);
+      },
     }
   );
-
 
   return (
     <section id="portafolio" className="container pt-[70px]">
@@ -32,11 +37,7 @@ export default function Portfolio() {
           </p>
         </div>
 
-        <Pagination
-          totalPage={projects?.meta?.pagination.pageCount}
-          setPage={setPage}
-          page={page}
-        />
+        <Pagination totalPage={totalPage} setPage={setPage} page={page} />
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
           {projects?.data.map((project, index) => (
