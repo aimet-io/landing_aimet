@@ -49,7 +49,7 @@ export default function Contact() {
               contacto conmigo. O si lo prefiere, puede enviarme un correo
               electrónico a &nbsp;
             </span>
-            <span className="font-semibold"> josephvtxx@gmail.com</span>
+            <span className="font-semibold hover:select-all">josephvtxx@gmail.com</span>
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function Contact() {
 
               <div className="text-white">
                 <h5 className="md:text-[30px] text-[25px]">Email</h5>
-                <p>josephvtxx@gmail.com</p>
+                <p className="hover:select-all">josephvtxx@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4">

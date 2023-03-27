@@ -10,7 +10,7 @@ export default function About() {
       className="container grid gap-4 lg:grid-cols-2 items-center pt-[70px]"
     >
       <img
-       className="max-lg:order-2"
+        className="max-lg:order-2"
         src="https://lh3.googleusercontent.com/d/1EjOxJkasLf99MEi1qJw4L2v2nWTgKRiQ=rw"
         alt="About"
       />
