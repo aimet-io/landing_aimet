@@ -37,30 +37,16 @@ export default function Portfolio() {
           setPage={setPage}
           page={page}
         />
-        {projects?.data && (
-          <motion.div
+        
+          <div
             className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={{
-              initial: { opacity: 0 },
-
-              animate: {
-                opacity: 1,
-                transition: { staggerChildren: 0.18 },
-              },
-            }}
+          
           >
             {projects?.data.map((project, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="group/item overflow-hidden  relative rounded-xl before:content-[''] before:absolute before:h-full before:bottom-0 before:left-0 before:w-full before:transition-opacity hover:before:opacity-100 before:bg-dark/70 before:opacity-0  before:duration-300"
-                variants={{
-                  initial: { opacity: 0, y: "50%" },
-                  animate: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                
               >
                 <img
                   className="w-full object-cover"
@@ -75,10 +61,10 @@ export default function Portfolio() {
                 >
                   Abrir Demo
                 </Link>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        )}
+          </div>
+     
       </div>
     </section>
   );
