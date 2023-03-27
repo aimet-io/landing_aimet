@@ -37,34 +37,30 @@ export default function Portfolio() {
           setPage={setPage}
           page={page}
         />
-        
-          <div
-            className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12"
-          
-          >
-            {projects?.data.map((project, index) => (
-              <div
-                key={index}
-                className="group/item overflow-hidden  relative rounded-xl before:content-[''] before:absolute before:h-full before:bottom-0 before:left-0 before:w-full before:transition-opacity hover:before:opacity-100 before:bg-dark/70 before:opacity-0  before:duration-300"
-                
-              >
-                <img
-                  className="w-full object-cover"
-                  src={project?.attributes.image.data.attributes.url}
-                  alt="Project"
-                />
 
-                <Link
-                  className="text-[18px] px-6 py-2 border rounded-md transition-opacity duration-300  absolute opacity-0 group-hover/item:opacity-100 group-hover/item:visible invisible left-1/2 top-1/2  -translate-y-1/2  -translate-x-1/2 text-white"
-                  target="_blank"
-                  href={project?.attributes.preview ?? "#"}
-                >
-                  Abrir Demo
-                </Link>
-              </div>
-            ))}
-          </div>
-     
+        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
+          {projects?.data.map((project, index) => (
+            <div
+              key={index}
+              className="group/item overflow-hidden  relative rounded-xl before:content-[''] before:absolute before:h-full before:bottom-0 before:left-0 before:w-full before:transition-opacity hover:before:opacity-100 before:bg-dark/70 before:opacity-0  before:duration-300"
+            >
+              <img
+                referrerPolicy="no-referrer"
+                className="w-full object-cover"
+                src={project?.attributes.image.data.attributes.url}
+                alt="Project"
+              />
+
+              <Link
+                className="text-[18px] px-6 py-2 border rounded-md transition-opacity duration-300  absolute opacity-0 group-hover/item:opacity-100 group-hover/item:visible invisible left-1/2 top-1/2  -translate-y-1/2  -translate-x-1/2 text-white"
+                target="_blank"
+                href={project?.attributes.preview ?? "#"}
+              >
+                Abrir Demo
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

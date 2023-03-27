@@ -11,6 +11,7 @@ export default function About() {
     >
       <img
         className="max-lg:order-2"
+        referrerPolicy="no-referrer"
         src="https://lh3.googleusercontent.com/d/1EjOxJkasLf99MEi1qJw4L2v2nWTgKRiQ=rw"
         alt="About"
       />

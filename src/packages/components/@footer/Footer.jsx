@@ -38,8 +38,8 @@ export default function Footer() {
         
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023 &nbsp;
-          <Link href="https://josephvega.dev" target='_blank' className="hover:underline">
-            Joseph Vega
+          <Link href="/" target='_blank' className="hover:underline">
+            Aimet
           </Link>
           . All Rights Reserved.
         </span>
