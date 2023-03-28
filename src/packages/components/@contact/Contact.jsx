@@ -43,11 +43,10 @@ export default function Contact() {
           <p className="text-muted dark:text-darkmuted text-lg leading-[30px] ">
             <span className="select-none">
               Por favor, rellene el formulario de esta sección para ponerse en
-              contacto conmigo. O si lo prefiere, puede enviarme un correo
-              electrónico a &nbsp;
+              contacto con nosotros. O si lo prefiere, puede enviar un correo a &nbsp;
             </span>
-            <span className="font-semibold hover:select-all">
-              josephvtxx@gmail.com
+            <span className="font-semibold select-all">
+              official.aimet@gmail.com
             </span>
           </p>
         </div>
@@ -73,7 +72,7 @@ export default function Contact() {
                 <FaMapMarkerAlt />
               </div>
 
-              <div className="text-white">
+              <div className="select-none">
                 <h5 className="md:text-[30px] text-[25px]">Dirección</h5>
                 <p>Perú, Lima</p>
               </div>
@@ -86,9 +85,9 @@ export default function Contact() {
                 <MdEmail />
               </a>
 
-              <div className="text-white">
-                <h5 className="md:text-[30px] text-[25px]">Email</h5>
-                <p className="hover:select-all">official.aimet@gmail.com</p>
+              <div>
+                <h5 className="md:text-[30px] text-[25px] select-none">Email</h5>
+                <p className="select-all">official.aimet@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -99,9 +98,9 @@ export default function Contact() {
                 <FaPhoneAlt />
               </a>
 
-              <div className="text-white">
-                <h5 className="md:text-[30px] text-[25px]">Teléfono</h5>
-                <p>+51 904 492 115</p>
+              <div >
+                <h5 className="md:text-[30px] text-[25px] select-none ">Teléfono</h5>
+                <p className="select-all">+51 904 492 115</p>
               </div>
             </div>
           </motion.section>
@@ -129,7 +128,7 @@ export default function Contact() {
                 {...register("name", { required: true })}
                 placeholder="Nombre"
                 type="text"
-                className={`py-4 px-3 rounded-lg bg-transparent border outline-none ${
+                className={`py-4 px-3 rounded-lg bg-transparent border border-light outline-none ${
                   errors.name ? " outline-red-400 -outline-offset-2" : ""
                 }`}
               />
@@ -137,19 +136,19 @@ export default function Contact() {
                 {...register("email")}
                 placeholder="Correo"
                 type="email"
-                className="py-4 px-3 rounded-lg bg-transparent border outline-none"
+                className="py-4 px-3 rounded-lg bg-transparent border border-light outline-none"
               />
               <input
                 {...register("phone")}
                 placeholder="Teléfono (Opcional)"
                 type="text"
-                className="py-4 px-3 rounded-lg bg-transparent border outline-none"
+                className="py-4 px-3 rounded-lg bg-transparent border border-light outline-none"
               />
               <input
                 {...register("subject")}
                 placeholder="Asunto"
                 type="text"
-                className="py-4 px-3 rounded-lg bg-transparent border outline-none"
+                className="py-4 px-3 rounded-lg bg-transparent border border-light outline-none"
               />
               <textarea
                 {...register("message", {
@@ -159,13 +158,13 @@ export default function Contact() {
                 maxLength={800}
                 rows="7"
                 type="text"
-                className={`py-4 px-3 rounded-lg bg-transparent outline-none lg:col-span-2 border ${
+                className={`py-4 px-3 rounded-lg bg-transparent outline-none lg:col-span-2 border border-light ${
                   errors.message ? " outline-red-400 -outline-offset-2" : ""
                 }`}
               />
 
               <div>
-                <button className="rounded-full p-[14px_48px] border">
+                <button className="rounded-full p-[14px_48px] border border-light">
                   Enviar Ahora
                 </button>
               </div>

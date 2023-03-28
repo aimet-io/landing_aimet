@@ -36,6 +36,7 @@ const paquetes = [
       "Modificaciones 5",
     ],
     price: "$0-$150",
+    isMajor: false,
   },
   {
     title: "Ultra Pro",
@@ -48,6 +49,7 @@ const paquetes = [
       "Posicionamiento SEO",
     ],
     price: "$150-$500",
+    isMajor: true
   },
   {
     title: "SuperB",
@@ -60,6 +62,7 @@ const paquetes = [
       "Servicio Personalizado",
     ],
     price: "$500-$+",
+    isMajor: false
   },
 ];
 
@@ -67,7 +70,7 @@ export default function Paquetes() {
   return (
     <section id="servicios" className="container pt-[70px] overflow-hidden">
       <h2 className="text-4xl font-bold text-center mb-4">Paquetes</h2>
-      <div className="flex justify-center flex-col sm:flex-row">
+      <div className="flex flex-col lg:flex-row justify-center items-center">
         {paquetes.map((paquete, index) => (
           <Paquete motionProps={animation} {...paquete} key={index} />
         ))}

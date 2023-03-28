@@ -39,7 +39,7 @@ export default function Portfolio() {
 
         <Pagination totalPage={totalPage} setPage={setPage} page={page} />
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-12">
+        <div className="grid  lg:grid-cols-2 xl:grid-cols-3 gap-12">
           {projects?.data.map((project) => (
             <div
               key={project.id}
@@ -47,8 +47,8 @@ export default function Portfolio() {
             >
               <img
                 referrerPolicy="no-referrer"
-                className="h-full object-cover"
-                src={`${project?.attributes.image.data.attributes.url}-w460`}
+                className="w-full h-full object-cover"
+                src={`${project?.attributes.image.data.attributes.url}-w512`}
                 alt="Project"
               />
 
