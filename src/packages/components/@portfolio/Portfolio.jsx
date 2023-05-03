@@ -4,6 +4,7 @@ import useSWR from "swr";
 import Link from "next/link";
 import Pagination from "../@pagination/Pagination";
 
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -18,6 +19,8 @@ export default function Portfolio() {
       revalidateOnFocus: false,
       revalidateIfStale: false,
       onSuccess: (data) => {
+
+        console.log(data);
         const currentPage = data.meta.pagination.page;
 
         if (currentPage == 1)
