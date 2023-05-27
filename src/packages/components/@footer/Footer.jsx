@@ -41,7 +41,7 @@ export default function Footer() {
           <Link href="/" target='_blank' className="hover:underline">
             Aimet
           </Link>
-          . All Rights Reserved.
+          . Todos Los Derechos Reservados.
         </span>
       </div>
     </footer>
