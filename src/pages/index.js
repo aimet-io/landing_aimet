@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <MainLayout title="Aimet Solutions">
+      <MainLayout title="Aimet | Home">
         <div className="w-full ">
           <About />
           <Paquetes />

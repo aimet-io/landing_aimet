@@ -35,7 +35,7 @@ const paquetes = [
       "Web personalizadas",
       "Modificaciones 5",
     ],
-    price: "$0-$150",
+    price: "$80-$150",
     isMajor: false,
   },
   {
