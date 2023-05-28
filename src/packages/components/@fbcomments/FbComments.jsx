@@ -3,13 +3,14 @@
 import { Comments } from "react-facebook";
 import { FacebookProvider } from "react-facebook";
 
-const FbComments = () => {
+const FbComments = ({ style={} }) => {
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        ...style
       }}
     >
       <div
