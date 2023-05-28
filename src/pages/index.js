@@ -17,7 +17,7 @@ export default function Home() {
           <Paquetes />
           <Portfolio />
           <h2 className="text-3xl text-center mt-[4rem] mb-5">Lo que dicen nuestros clientes</h2>
-          <FbComments style={{margin: "1rem"}} />
+          <FbComments className="m-4" />
           <Contact/>
         </div>
       </MainLayout>
