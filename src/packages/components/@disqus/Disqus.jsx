@@ -1,7 +1,7 @@
 import { DiscussionEmbed } from "disqus-react";
 import { useEffect, useState } from "react";
 
-const Discus = () => {
+const Disqus = () => {
   const [href, setHref] = useState("");
 
   useEffect(() => {
@@ -24,4 +24,4 @@ const Discus = () => {
   );
 };
 
-export default Discus;
+export default Disqus;
