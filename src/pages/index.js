@@ -16,12 +16,14 @@ export default function Home() {
           <About />
           <Paquetes />
           <Portfolio />
-          <h2 className="text-3xl text-center mt-[4rem] mb-5">Lo que dicen nuestros clientes</h2>
+          <h2 className="text-3xl text-center mt-[4rem] mb-5">
+            Lo que dicen nuestros clientes
+          </h2>
           <FbComments className="m-4" />
-          <Contact/>
+          <Contact />
         </div>
       </MainLayout>
-      <Toaster/>
+      <Toaster />
     </>
   );
 }
