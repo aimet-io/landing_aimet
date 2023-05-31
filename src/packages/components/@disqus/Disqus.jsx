@@ -9,7 +9,7 @@ const Disqus = () => {
   }, []);
 
   return (
-    <div className="mt-4 mx-[3rem]">
+    <div id="comentarios" className="mt-4 mx-[3rem]">
       {href ? (
         <DiscussionEmbed
           shortname="darwinva"
