@@ -58,9 +58,7 @@ export default function Nav() {
         <div
           className={`max-lg:absolute lg:block ${
             isOpen ? "block" : "hidden"
-          } lg:w-max left-0 top-full w-full transition-colors duration-500  ${
-            scrollPosition > 0 && "bg-dark/95"
-          }`}
+          } lg:w-max left-0 top-full w-full transition-colors duration-500`}
         >
           <ul className="container  lg:flex gap-x-2 items-center">
             {nav.map(({ id, name }) => (
