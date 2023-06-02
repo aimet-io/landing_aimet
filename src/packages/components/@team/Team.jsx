@@ -9,7 +9,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const CardTeam = ({ team }) => {
   const { attributes } = team;
 
-  const { name, rol, perfil } = attributes;
+  const { name, rol, perfil, github, linkedin, facebook } = attributes;
 
   return (
     <div className="flex relative shadow-[0_1px_1px_2px_hsla(0,0%,100%,.05)] flex-col  items-center   m-4 rounded-lg p-10 px-16">
@@ -24,29 +24,17 @@ const CardTeam = ({ team }) => {
         <h3 className="pt-8 pb-4 text-xl ">{rol}</h3>
 
         <div className="flex gap-10  border-t pt-4 border-gray-800 mt-6 text-4xl">
-          <a
-            href="https://instagram.com/saiyandb"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={github ?? "#"} target="_blank" rel="noreferrer">
             <span>
               <FiGithub />
             </span>
           </a>
-          <a
-            href="https://www.twitter.com/saiyanpro"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={linkedin ?? "#"} target="_blank" rel="noreferrer">
             <span>
               <FaLinkedinIn />
             </span>
           </a>
-          <a
-            href="https://www.twitch.tv/saiyanpro"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={facebook ?? "#"} target="_blank" rel="noreferrer">
             <span>
               <FaFacebookF />
             </span>
