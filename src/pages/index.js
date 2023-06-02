@@ -5,6 +5,7 @@ import Disqus from "@/packages/components/@disqus/Disqus";
 import Hero from "@/packages/components/@hero/Hero";
 import Paquetes from "@/packages/components/@paquetes/Paquetes";
 import Portfolio from "@/packages/components/@portfolio/Portfolio";
+import Team from "@/packages/components/@team/Team";
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <div className="w-full ">
           <About />
           <Paquetes />
+          <Team />
           <Portfolio />
           <Contact />
           <h2 className="text-3xl text-center mt-[4rem] mb-5">

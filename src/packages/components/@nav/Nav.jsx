@@ -15,6 +15,13 @@ const nav = [
 
     id: "nosotros",
   },
+  {
+
+    name: "Equipo",
+
+    id: "equipo",
+
+  },
 
   {
     name: "Servicios",

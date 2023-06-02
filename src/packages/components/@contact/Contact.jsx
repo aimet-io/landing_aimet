@@ -73,7 +73,8 @@ export default function Contact() {
               </div>
 
               <div className="select-none">
-                <h5 className="md:text-[30px] text-[25px]">Dirección</h5>
+                <h5 className="md:text-[30px] text-[25px]">Home Office</h5>
+                <p>Argentina, Buenos Aires</p>
                 <p>Perú, Lima</p>
               </div>
             </div>
@@ -101,6 +102,7 @@ export default function Contact() {
               <div >
                 <h5 className="md:text-[30px] text-[25px] select-none ">Teléfono</h5>
                 <p className="select-all">+51 904 492 115</p>
+                <p className="select-all">+54 11 3194 2498 </p>
               </div>
             </div>
           </motion.section>
