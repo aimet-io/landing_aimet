@@ -51,7 +51,7 @@ export default function Portfolio() {
               <img
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
-                src={`${project?.attributes.image.data.attributes.url}-w512`}
+                src={`${project?.attributes?.image?.data?.attributes?.url}-w512`}
                 alt="Project"
               />
 
