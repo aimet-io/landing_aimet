@@ -50,7 +50,7 @@ export default function Team() {
   const { data: teams } = useSWR(`${API_URL}/teams?populate=*`, fetcher);
 
   return (
-    <div className="pt-[70px] space-y-10">
+    <div id="equipo" className="pt-[70px] space-y-10">
       <p className="text-4xl text-center ">Nuestro Equipo</p>
       <div className="container  flex flex-wrap justify-center">
         {teams?.data?.map((team, index) => (
