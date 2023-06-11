@@ -28,6 +28,8 @@ export default function MainLayout({ title, children, metaDescription }) {
 
         <meta name="og:description" content="Expertos en desarrollo web y e-commerce: ¡Obtén tu sitio web o tienda online de alto rendimiento ahora! Somos líderes en creación de páginas web y soluciones de comercio electrónico personalizadas. ¡Contacta con nosotros para un resultado excepcional y aparece en la cima de Google!" />
         
+        <meta property="og:image" content="https://www.aimet.io/img/aimet.png"/>
+    
         <meta
           name="og:description"
           content="Programador web en Perú, programador web en Lima, programador web en Estados Unidos, programador web en Chile, programador web en Argentina, programador web en Colombia, programador web en Ecuador, programador web en Bolivia, programador web en Venezuela, programador web en Brasil, programador web en Paraguay, programador web en Uruguay, programador web en México, programador web en España, programador web en Francia, programador web en Italia, programador web en Alemania, programador web en Inglaterra, programador web en Reino Unido, programador web en Australia, programador web en Nueva Zelanda, programador web en Japón, programador web en China, programador web en Rusia, programador web en India, programador web en Indonesia, programador web en Singapur, programador web en Malasia, programador web en Tailandia, programador web en Vietnam, programador web en Filipinas, programador web en Corea del Sur, programador web en Sudáfrica, programador web en Nigeria, programador web en Egipto."
