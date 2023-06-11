@@ -29,6 +29,9 @@ export default function MainLayout({ title, children, metaDescription }) {
         <meta name="og:description" content="Expertos en desarrollo web y e-commerce: ¡Obtén tu sitio web o tienda online de alto rendimiento ahora! Somos líderes en creación de páginas web y soluciones de comercio electrónico personalizadas. ¡Contacta con nosotros para un resultado excepcional y aparece en la cima de Google!" />
         
         <meta property="og:image" content="https://www.aimet.io/img/aimet.png"/>
+      	<meta property="og:image:width" content="900"/>
+        <meta property="og:image:height" content="600"/>
+        <meta property="og:image:type" content="image/png"/>
     
         <meta
           name="og:description"
