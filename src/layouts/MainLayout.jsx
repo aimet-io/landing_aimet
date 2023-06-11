@@ -46,11 +46,11 @@ export default function MainLayout({ title, children, metaDescription }) {
           content="desarrollo de software, marketing digital, desarrollo web, diseño web, diseño gráfico, diseño de logotipos, diseño de marcas, diseño de identidad corporativa, diseño de imagen corporativa, tiendas en línea, e-commerce, diseño de páginas web, diseño de sitios web, diseño de aplicaciones móviles, desarrollo de aplicaciones móviles, desarrollo de aplicaciones web, desarrollo de software a la medida, desarrollo de software empresarial, desarrollo de software para empresas, desarrollo de software para negocios, desarrollo de software para pymes, desarrollo de software para emprendedores, desarrollo de software para startups, desarrollo de software para emprendimientos, desarrollo de software para emprendedores, desarrollo de software para emprendimientos, desarrollo de software para emprendedores, desarrollo de software para emprendimientos, desarrollo de software para emprendedores, desarrollo de software para emprendimientos."
         />
 
-        <meta property="og:image" content="/logo.png" />
+        <meta property="og:image" content="https://www.aimet.io/logo.png" />
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="https://www.aimet.io/logo.png" />
       </Head>
 
       <Nav />
