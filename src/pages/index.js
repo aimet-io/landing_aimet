@@ -8,6 +8,7 @@ import Portfolio from "@/packages/components/@portfolio/Portfolio";
 import Team from "@/packages/components/@team/Team";
 import { Toaster } from "react-hot-toast";
 
+// xd
 export default function Home() {
   return (
     <>
